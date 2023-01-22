@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig, Method } from 'axios';
 
-import { TOKEN_KEY } from '../constants/auth';
+import { ACCESS_TOKEN_KEY } from '../constants/auth';
 import { HTTP_METHODS } from '../constants/http';
 import { getLocalStorage } from '../utils/storage';
 
@@ -14,7 +14,7 @@ const axiosInstance: AxiosInstance = axios.create({
 });
 
 const handleRequest = (config: AxiosRequestConfig) => {
-  const token = getLocalStorage(TOKEN_KEY);
+  const token = getLocalStorage(ACCESS_TOKEN_KEY);
 
   return token
     ? ({
